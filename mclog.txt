@@ -1,0 +1,44 @@
+2022-02-26T23:18:13.646 | Execute: mchelp.ps1 
+2022-02-26T23:24:46.198 | Execute: mchelp.ps1 
+2022-02-26T23:24:53.273 | Execute: mcver.ps1 
+2022-02-26T23:25:54.086 | Execute: mcver.ps1 
+2022-02-26T23:25:55.148 | Execute: mchelp.ps1 
+2022-02-27T17:42:53.527 | Execute: mchelp.ps1 
+2022-02-27T17:43:18.046 | Execute: cdmc.ps1 
+2022-02-27T17:47:03.804 | Execute: cdmc.ps1 
+2022-02-27T17:47:13.148 | Execute: mchelp.ps1 
+2022-02-27T17:47:17.710 | Execute: cdmc.ps1 
+2022-02-27T17:48:25.912 | Execute: cdmc.ps1 
+2022-02-27T17:50:00.611 | Execute: cdmc.ps1 
+2022-02-27T17:50:31.096 | Execute: cdmc.ps1 
+2022-02-27T17:51:37.427 | Execute: cdmc.ps1 
+2022-02-27T17:52:25.580 | Execute: cdmc.ps1 
+2022-02-27T17:53:24.772 | Execute: cdmc.ps1 
+2022-02-27T17:53:49.019 | Execute: cdmc.ps1 
+2022-02-27T17:54:28.131 | Execute: cdmc.ps1 
+2022-02-27T17:55:02.625 | Execute: cdmc.ps1 
+2022-02-27T17:55:29.147 | Execute: cdmc.ps1 
+2022-02-27T17:56:17.708 | Execute: cdmc.ps1 
+2022-02-27T17:57:36.253 | Execute: cdmc.ps1 
+2022-02-27T17:59:13.253 | Execute: mchelp.ps1 
+2022-02-27T17:59:16.356 | Execute: cdmcr.ps1 
+2022-02-27T17:59:36.923 | Execute: cdmcr.ps1 
+2022-02-27T18:14:06.137 | Execute: cdmcs.ps1 
+2022-02-27T18:14:32.827 | Execute: cdmcs.ps1 
+2022-02-27T18:14:52.370 | Execute: cdmc.ps1 
+2022-02-27T18:20:14.649 | Execute: cdmc.ps1 
+2022-02-27T18:24:13.222 | Execute: cdmc.ps1 
+2022-02-27T18:24:44.650 | Execute: cdmc.ps1 -s
+2022-02-27T18:26:01.006 | Execute: cdmc.ps1 -s
+2022-02-27T18:27:59.879 | Execute: cdmc.ps1 -s
+2022-02-27T18:28:05.361 | Execute: cdmc.ps1 
+2022-02-27T18:29:54.989 | Execute: cdmc.ps1 -s
+2022-02-27T18:30:09.191 | Execute: cdmc.ps1 -s
+2022-02-27T18:30:23.902 | Execute: cdmc.ps1 -s
+2022-02-27T18:33:09.847 | Execute: cdmc.ps1 -s
+2022-02-27T18:33:12.550 | Execute: cdmc.ps1 
+2022-02-27T18:36:07.981 | Execute: cdmc.ps1 
+2022-02-27T18:36:12.401 | Execute: cdmc.ps1 -s
+2022-02-27T18:36:14.812 | Execute: cdmc.ps1 -p
+2022-02-27T18:37:41.031 | Execute: mchelp.ps1 
+2022-02-27T18:37:45.630 | Execute: mcbld.ps1 
