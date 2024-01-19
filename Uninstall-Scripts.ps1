@@ -46,6 +46,9 @@ Begin
 Process
 {	
 	Remove-PathFromProfile -PathVariable 'Path' -Path (Get-Location).Path
+	
+	Remove-AliasFromProfile -Script 'Get-CodeHelp' -Alias 'mchelp'
+	Remove-AliasFromProfile -Script 'Get-CodeHelp' -Alias 'gch'
 }
 
 End

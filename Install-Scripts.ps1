@@ -47,6 +47,9 @@ Process
 {	
 	Add-PathToProfile -PathVariable 'Path' -Path (Get-Location).Path
 	Add-PathToProfile -PathVariable 'PSModulePath' -Path $ModulesPath
+	
+	Add-AliasToProfile -Script 'Get-CodeHelp' -Alias 'mchelp'
+	Add-AliasToProfile -Script 'Get-CodeHelp' -Alias 'gch'
 }
 
 End
