@@ -47,8 +47,32 @@ Process
 {	
 	Remove-PathFromProfile -PathVariable 'Path' -Path (Get-Location).Path
 	
+	Uninstall-Module -Name Invoke-SqlCmd2
+	
 	Remove-AliasFromProfile -Script 'Get-CodeHelp' -Alias 'mchelp'
 	Remove-AliasFromProfile -Script 'Get-CodeHelp' -Alias 'gch'
+	Remove-AliasFromProfile -Script 'Build-Code' -Alias 'bc'
+	Remove-AliasFromProfile -Script 'Build-Code' -Alias 'mcbld'
+	Remove-AliasFromProfile -Script 'Build-EntityFrameworkContext' -Alias 'befc'
+	Remove-AliasFromProfile -Script 'Build-EntityFrameworkContext' -Alias 'mcbef'
+	Remove-AliasFromProfile -Script 'Build-SharedLibrary' -Alias 'bsl'
+	Remove-AliasFromProfile -Script 'Build-SharedLibrary' -Alias 'mcbsl'
+	Remove-AliasFromProfile -Script 'Get-CodeScriptVersion' -Alias 'gcsv'
+	Remove-AliasFromProfile -Script 'Get-CodeScriptVersion' -Alias 'mcver'
+	Remove-AliasFromProfile -Script 'Invoke-SqlQuery' -Alias 'isq'
+	Remove-AliasFromProfile -Script 'Invoke-SqlQuery' -Alias 'mcsql'
+	Remove-AliasFromProfile -Script 'Invoke-Tests' -Alias 'it'
+	Remove-AliasFromProfile -Script 'Invoke-Tests' -Alias 'mctst'
+	Remove-AliasFromProfile -Script 'Remove-ProjectDirectory' -Alias 'rpd'
+	Remove-AliasFromProfile -Script 'Remove-ProjectDirectory' -Alias 'mcrem'
+	Remove-AliasFromProfile -Script 'Set-DirectoryCodeRoot' -Alias 'sdcr'
+	Remove-AliasFromProfile -Script 'Set-DirectoryCodeRoot' -Alias 'mccdr'
+	Remove-AliasFromProfile -Script 'Start-SqlServerManagementStudio' -Alias 'sssms'
+	Remove-AliasFromProfile -Script 'Start-SqlServerManagementStudio' -Alias 'mcssms'
+	Remove-AliasFromProfile -Script 'Start-VisualStudio' -Alias 'svs'
+	Remove-AliasFromProfile -Script 'Start-VisualStudio' -Alias 'mcvs'
+	Remove-AliasFromProfile -Script 'Start-VisualStudioCode' -Alias 'svsc'
+	Remove-AliasFromProfile -Script 'Start-VisualStudioCode' -Alias 'mcvsc'
 }
 
 End

@@ -20,23 +20,23 @@ if(Test-Path $rootCommonFile)
 }
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function IsValid-Directory($path) {
-	return (test-path -Path "$path\*.csproj" -PathType leaf) -or (test-path -Path "$path\*.sln" -PathType leaf)
+	return (Test-Path -Path "$path\*.csproj" -PathType leaf) -or (Test-Path -Path "$path\*.sln" -PathType leaf)
 }
 
 function IsValid-SolutionDirectory($path) {
-	return (test-path -Path "$path\*.sln" -PathType leaf)
+	return (Test-Path -Path "$path\*.sln" -PathType leaf)
 }
 
 function IsValid-ProjectDirectory($path) {
-	return (test-path -Path "$path\*.csproj" -PathType leaf)
+	return (Test-Path -Path "$path\*.csproj" -PathType leaf)
 }
 
 function IsValid-TestDirectory($path) {
-	return (test-path -Path "$path\*Test*.csproj" -PathType leaf)
+	return (Test-Path -Path "$path\*Test*.csproj" -PathType leaf)
 }
 
 function IsValid-ScriptDirectory($path) {
-	return ((test-path -Path "$path\version.txt" -PathType leaf) -and (test-path -Path "$path\*.ps1" -PathType leaf))
+	return ((Test-Path -Path "$path\version.txt" -PathType leaf) -and (Test-Path -Path "$path\*.ps1" -PathType leaf))
 }
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Verify-Path $codeRootDir
