@@ -42,39 +42,8 @@ Process
 	{
 		$isDebug = Assert-Debug
 		
-		$mcPath = $PSScriptRoot
-
-		Get-ChildItem $PSScriptRoot -Filter "VNet.*" | Foreach-Object -Process {
-			"$($_.FullName)"
-		} 
-
-		exit 0
-
-		$files = @(Get-ChildItem -filter "*.sln")
-		if($files.count -gt 0) 
-		{ 
-			$file = $files[0] 
-		}
-		else 
-		{
-			$files = @(Get-ChildItem -filter "*.csproj")
-			
-			if($files.count -gt 0) 
-			{ 
-				$file = $files[0] 
-			}
-			else
-			{
-				WriteError "No solution or project file found."
-				
-				exit 2
-			}
-		}
-
-		Write-Host "Building..." -ForegroundColor Cyan
-
-		& $msbuildExe /property:Configuration=Debug /verbosity:quiet "$file"
-		& $msbuildExe /property:Configuration=Release /verbosity:quiet "$file"
+		& $msbuildExe /property:Configuration=Debug /verbosity:quiet "$($codeRootDir)VNet\VNet.sln"
+		& $msbuildExe /property:Configuration=Release /verbosity:quiet "$($codeRootDir)VNet\VNet.sln"
 	}
 	catch [System.Exception]
 	{
