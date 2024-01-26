@@ -47,7 +47,10 @@ Process
 	Add-PathToProfile -PathVariable 'Path' -Path (Get-Location).Path
 	Add-PathToProfile -PathVariable 'PSModulePath' -Path $ModulesPath
 	
-	Install-Module -Name Invoke-SqlCmd2
+	if ($PSCmdlet.ShouldProcess($'Invoke-SqlCmd2', 'Install module.')) 
+	{
+		Install-Module -Name Invoke-SqlCmd2
+	}
 	
 	Add-AliasToProfile -Script 'Get-CodeHelp' -Alias 'mchelp'
 	Add-AliasToProfile -Script 'Get-CodeHelp' -Alias 'gch'

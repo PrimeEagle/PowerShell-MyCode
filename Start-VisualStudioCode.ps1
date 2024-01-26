@@ -43,7 +43,10 @@ Process
 		$isDebug = Assert-Debug
 		
 		$vsCodePath = Get-VisualStudioCodePath
-		Start-Process $vsPath .
+		if ($PSCmdlet.ShouldProcess($vsPath, 'Execute program')) 
+		{
+			Start-Process $vsPath .
+		}
 	}
 	catch [System.Exception]
 	{

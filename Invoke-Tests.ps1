@@ -65,10 +65,16 @@ Process
 		}
 
 		Write-Host "Building..."
-		& $msbuildPrivate /property:Configuration=Release /verbosity:quiet "$file"
+		if ($PSCmdlet.ShouldProcess($file, "Build for 'Release'.")) 
+		{
+			& $msbuildPrivate /property:Configuration=Release /verbosity:quiet "$file"
+		}
 
 		Write-Host "Running tests..."
-		& dotnet test `"$file`"
+		if ($PSCmdlet.ShouldProcess($file, 'Run tests.')) 
+		{
+			& dotnet test `"$file`"
+		}
 	}
 	catch [System.Exception]
 	{

@@ -41,9 +41,17 @@ Process
 	try
 	{
 		$isDebug = Assert-Debug
+		$vNet = "$($codeRootDir)VNet\VNet.sln"
 		
-		& $msbuildExe /property:Configuration=Debug /verbosity:quiet "$($codeRootDir)VNet\VNet.sln"
-		& $msbuildExe /property:Configuration=Release /verbosity:quiet "$($codeRootDir)VNet\VNet.sln"
+		if ($PSCmdlet.ShouldProcess($vNet, "Build for 'Debug'.")) 
+		{
+			& $msbuildExe /property:Configuration=Debug /verbosity:quiet $vNet
+		}
+		
+		if ($PSCmdlet.ShouldProcess($vNet, "Build for 'Release'.")) 
+		{
+			& $msbuildExe /property:Configuration=Release /verbosity:quiet $vNet
+		}
 	}
 	catch [System.Exception]
 	{

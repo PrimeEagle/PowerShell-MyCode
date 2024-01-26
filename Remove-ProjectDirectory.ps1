@@ -50,19 +50,11 @@ Process
 			exit 2
 		}
 
-		function Remove-Project 
+		Write-Host "Removing project directory $curDir..."
+		if ($PSCmdlet.ShouldContinue($curDir, 'Remove directory.')) 
 		{
-			Write-Host "Removing project directory $curDir..."
 			Set-Location(Get-SrcDir)
 			Remove-Item -recurse -force $curDir 
-		}
-
-		Display-Warning "Remove this project directory? [y|N]" -NoNewline
-		$readHost = Read-Host
-		switch ($readHost) 
-		{
-			Y { Remove-Project  }
-			Default {Write-Host "Remove cancelled."}
 		}
 	}
 	catch [System.Exception]

@@ -74,8 +74,15 @@ Process
 
 		Write-Host "Building..." -ForegroundColor Cyan
 
-		& $msbuildExe /property:Configuration=Debug /verbosity:quiet "$file"
-		& $msbuildExe /property:Configuration=Release /verbosity:quiet "$file"
+		if ($PSCmdlet.ShouldProcess($file, "Build for 'Debug'.")) 
+		{
+			& $msbuildExe /property:Configuration=Debug /verbosity:quiet "$file"
+		}
+		
+		if ($PSCmdlet.ShouldProcess($file, "Build for 'Release'.")) 
+		{
+			& $msbuildExe /property:Configuration=Release /verbosity:quiet "$file"
+		}
 	}
 	catch [System.Exception]
 	{

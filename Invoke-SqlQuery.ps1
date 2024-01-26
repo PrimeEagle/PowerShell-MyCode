@@ -42,7 +42,7 @@ using module Varan.PowerShell.Validation
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Requires -Version 5.0
 #Requires -Modules Varan.PowerShell.Validation
-[CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'Medium')]
+[CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
 param (	
 		[Parameter(Mandatory = $true, ParameterSetName = "query")]	[string]$Query,
 		[Parameter(Mandatory = $true, ParameterSetName = "file")]	[string]$FileName,
@@ -128,7 +128,10 @@ Process
 			Write-Host "Exceuting query file `"$FileName`"..."
 		}
 
-		Invoke-Expression $cmd
+		if ($PSCmdlet.ShouldProcess($cmd, 'Invoke-Expression.')) 
+		{
+			Invoke-Expression $cmd
+		}
 	}
 	catch [System.Exception]
 	{

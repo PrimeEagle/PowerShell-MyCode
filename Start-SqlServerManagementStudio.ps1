@@ -88,7 +88,10 @@ Process
 			$parameters += "$QueryFile" 
 		}
 
-		& $ssmsPath -nosplash @parameters
+		if ($PSCmdlet.ShouldProcess($ssmsPath, 'Execute program.')) 
+		{
+			& $ssmsPath -nosplash @parameters
+		}
 	}
 	catch [System.Exception]
 	{

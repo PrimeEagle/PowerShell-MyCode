@@ -21,7 +21,7 @@ using module Varan.PowerShell.Validation
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Requires -Version 5.0
 #Requires -Modules Varan.PowerShell.Validation
-[CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'Medium')]
+[CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
 param (	
 		[Parameter(Mandatory = $true)]	[string]$Context
 	  )
@@ -62,20 +62,26 @@ Process
 		}
 
 		$fullContext = $Context + "DbContext"
-
+		
 		Write-Host "Reverting to initial migration..." -ForegroundColor Cyan
-		& dotnet ef database update CreateIdentitySchema --context $fullContext
+		if ($PSCmdlet.ShouldProcess($fullContext, 'Create identity schema.')) {
+			& dotnet ef database update CreateIdentitySchema --context $fullContext
+		}
 
 		Write-Host "Removing migration..." -ForegroundColor Cyan
-		& dotnet ef migrations remove --context $fullContext
+		if ($PSCmdlet.ShouldProcess($fullContext, 'Remove migrations.')) {
+			& dotnet ef migrations remove --context $fullContext
+		}
 
 		Write-Host "Adding new migration..." -ForegroundColor Cyan
-		& dotnet ef migrations add Initialize --context $fullContext
+		if ($PSCmdlet.ShouldProcess($fullContext, 'Add migrations.')) {
+			& dotnet ef migrations add Initialize --context $fullContext
+		}
 
 		Write-Host "Updating database..." -ForegroundColor Cyan
-		& dotnet ef database update --context $fullContext
-
-		Write-Host "Done." -ForegroundColor Cyan																					
+		if ($PSCmdlet.ShouldProcess($fullContext, 'Update database.')) {
+			& dotnet ef database update --context $fullContext
+		}																				
 	}
 	catch [System.Exception]
 	{

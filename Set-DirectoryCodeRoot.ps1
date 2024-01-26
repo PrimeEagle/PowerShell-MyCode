@@ -18,7 +18,7 @@ using module Varan.PowerShell.Validation
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Requires -Version 5.0
 #Requires -Modules Varan.PowerShell.Validation
-[CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'Low')]
+[CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'None')]
 param (	
 	  )
 DynamicParam { Build-BaseParameters }
@@ -42,7 +42,10 @@ Process
 	{
 		$isDebug = Assert-Debug
 		
-		Set-Location($codeRootDir)
+		if ($PSCmdlet.ShouldProcess($codeRootDir, 'Set directory.')) 
+		{
+			Set-Location($codeRootDir)
+		}
 	}
 	catch [System.Exception]
 	{

@@ -47,7 +47,10 @@ Process
 {	
 	Remove-PathFromProfile -PathVariable 'Path' -Path (Get-Location).Path
 	
-	Uninstall-Module -Name Invoke-SqlCmd2
+	if ($PSCmdlet.ShouldProcess('Invoke-SqlCmd2', 'Uninstall module.')) 
+	{
+		Uninstall-Module -Name Invoke-SqlCmd2
+	}
 	
 	Remove-AliasFromProfile -Script 'Get-CodeHelp' -Alias 'mchelp'
 	Remove-AliasFromProfile -Script 'Get-CodeHelp' -Alias 'gch'
