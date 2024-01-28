@@ -60,6 +60,8 @@ Process
 	Remove-AliasFromProfile -Script 'Build-EntityFrameworkContext' -Alias 'mcbef'
 	Remove-AliasFromProfile -Script 'Build-SharedLibrary' -Alias 'bsl'
 	Remove-AliasFromProfile -Script 'Build-SharedLibrary' -Alias 'mcbsl'
+	Remove-AliasFromProfile -Script 'Edit-Script' -Alias 'es'
+	Remove-AliasFromProfile -Script 'Edit-Script' -Alias 'mces'
 	Remove-AliasFromProfile -Script 'Get-CodeScriptVersion' -Alias 'gcsv'
 	Remove-AliasFromProfile -Script 'Get-CodeScriptVersion' -Alias 'mcver'
 	Remove-AliasFromProfile -Script 'Invoke-SqlQuery' -Alias 'isq'

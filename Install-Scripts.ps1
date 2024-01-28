@@ -60,6 +60,8 @@ Process
 	Add-AliasToProfile -Script 'Build-EntityFrameworkContext' -Alias 'mcbef'
 	Add-AliasToProfile -Script 'Build-SharedLibrary' -Alias 'bsl'
 	Add-AliasToProfile -Script 'Build-SharedLibrary' -Alias 'mcbsl'
+	Add-AliasToProfile -Script 'Edit-Script' -Alias 'es'
+	Add-AliasToProfile -Script 'Edit-Script' -Alias 'mces'
 	Add-AliasToProfile -Script 'Get-CodeScriptVersion' -Alias 'gcsv'
 	Add-AliasToProfile -Script 'Get-CodeScriptVersion' -Alias 'mcver'
 	Add-AliasToProfile -Script 'Invoke-SqlQuery' -Alias 'isq'
