@@ -54,6 +54,8 @@ Process
 	
 	Add-AliasToProfile -Script 'Get-CodeHelp' -Alias 'mchelp'
 	Add-AliasToProfile -Script 'Get-CodeHelp' -Alias 'gch'
+	Add-AliasToProfile -Script 'Add-NuGetSource' -Alias 'ans'
+	Add-AliasToProfile -Script 'Add-NuGetSource' -Alias 'mcans'
 	Add-AliasToProfile -Script 'Build-Code' -Alias 'bc'
 	Add-AliasToProfile -Script 'Build-Code' -Alias 'mcbld'
 	Add-AliasToProfile -Script 'Build-EntityFrameworkContext' -Alias 'befc'

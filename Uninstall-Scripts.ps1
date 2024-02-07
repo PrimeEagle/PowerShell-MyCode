@@ -54,6 +54,8 @@ Process
 	
 	Remove-AliasFromProfile -Script 'Get-CodeHelp' -Alias 'mchelp'
 	Remove-AliasFromProfile -Script 'Get-CodeHelp' -Alias 'gch'
+	Remove-AliasFromProfile -Script 'Add-NuGetSource' -Alias 'ans'
+	Remove-AliasFromProfile -Script 'Add-NuGetSource' -Alias 'mcans'
 	Remove-AliasFromProfile -Script 'Build-Code' -Alias 'bc'
 	Remove-AliasFromProfile -Script 'Build-Code' -Alias 'mcbld'
 	Remove-AliasFromProfile -Script 'Build-EntityFrameworkContext' -Alias 'befc'
