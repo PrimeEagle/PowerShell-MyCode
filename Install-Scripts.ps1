@@ -36,18 +36,18 @@ Begin
 	}
 
 	$Env:PSModulePath += ";$ModulesPath"
-	
-	Import-LocalModule Varan.PowerShell.SelfElevate
-	$boundParams = @{}
-	$PSCmdlet.MyInvocation.BoundParameters.GetEnumerator() | ForEach-Object { $boundParams[$_.Key] = $_.Value }
-	Open-ElevatedConsole -CallerScriptPath $PSCommandPath -OriginalBoundParameters $boundParams
+
+	if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
+		Start-Process -FilePath "pwsh.exe" -ArgumentList "-File `"$PSCommandPath`"", "-ModulesPath `"$ModulesPath`"" -Verb RunAs
+		exit
+	}
 }
 Process
 {	
 	Add-PathToProfile -PathVariable 'Path' -Path (Get-Location).Path
 	Add-PathToProfile -PathVariable 'PSModulePath' -Path $ModulesPath
 	
-	if ($PSCmdlet.ShouldProcess($'Invoke-SqlCmd2', 'Install module.')) 
+	if ($PSCmdlet.ShouldProcess('Invoke-SqlCmd2', 'Install module.')) 
 	{
 		Install-Module -Name Invoke-SqlCmd2
 	}
